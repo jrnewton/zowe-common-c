@@ -669,7 +669,7 @@ void zowelog(LoggingContext *context, uint64 compID, int level, char *formatStri
     va_list argPointer;
 
     LoggingDestination *destination = &getDestinationTable(context, compID)[component->destination];
-//    printf("log.2 comp.dest=%d\n",component->destination);fflush(stdout);
+    printf("log.2 comp.dest=%d\n",component->destination);fflush(stdout);
     if (component->destination >= MAX_LOGGING_DESTINATIONS){
       char message[128];
       sprintf(message,"Destination %d is out of range (log)\n",component->destination);
@@ -680,7 +680,7 @@ void zowelog(LoggingContext *context, uint64 compID, int level, char *formatStri
       printf("dev/null case\n");
       return;
     } 
-  //  printf("log.3\n");fflush(stdout);
+    printf("log.3\n");fflush(stdout);
     if (destination->state == LOG_DESTINATION_STATE_UNINITIALIZED){
       char message[128];
       sprintf(message,"Destination %d is not initialized for logging\n",component->destination);
